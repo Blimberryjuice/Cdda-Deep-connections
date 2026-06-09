@@ -5,7 +5,7 @@
     "name": "Deep Connections",
     "authors": [ "Blimberryjuice" ],
     "description": "Adds semi lewd but rewarding interactions with friendly followers to compliment vanilla conversations.",
-    "category": "npc_additions",
+    "category": "npc",
     "dependencies": [ "dda" ]
   }
 ]
