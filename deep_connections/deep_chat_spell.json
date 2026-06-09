@@ -1,0 +1,15 @@
+[
+  {
+    "id": "spell_deep_chat_noise",
+    "type": "SPELL",
+    "name": "Animated Conversation Noise",
+    "description": "An invisible system utility spell used via dialogue scripts to make talking aloud emit noise and attract nearby monsters.",
+    "valid_targets": [ "ground" ],
+    "effect": "noise",
+    "shape": "blast",
+    "min_aoe": 15,
+    "max_aoe": 15,
+    "sound_description": "the sound of shaking furniture and pleasured moans.",
+    "flags": [ "SILENT", "NO_HANDS", "NO_LEGS", "NO_FAIL" ]
+  }
+]

@@ -1,0 +1,99 @@
+[
+  {
+    "id": "TALK_FRIEND",
+    "type": "talk_topic",
+    "responses": [
+      {
+        "text": "Let's get down to buisness and fuck.",
+        "topic": "TALK_DEEP_CHAT_SUCCESS",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "math": [ "rng(1, 100) <= 50" ] }
+          ]
+        },
+        "switch": true
+      },
+      {
+        "text": "Let's get down to buisness and fuck.",
+        "topic": "TALK_DEEP_CHAT_FAIL",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } }
+          ]
+        },
+        "switch": true,
+        "default": true
+      }
+    ]
+  },
+  {
+    "id": "TALK_DEEP_CHAT_SUCCESS",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "npc_has_trait": "MASOCHIST",
+      "yes": {
+        "u_male": "Yes Daddy! be rough with me.",
+        "yes": "Yes Daddy! be rough with me.",
+        "no": "Yes Mistress, please be rough with me."
+      },
+      "no": {
+        "npc_male": {
+          "u_male": "Hell ya man, Let's fuck.",
+          "yes": "Hell ya man, Let's fuck.",
+          "no": "of course babe. Let's do it."
+        },
+        "yes": {
+          "u_male": "Hell ya man, Let's fuck.",
+          "yes": "Hell ya man, Let's fuck.",
+          "no": "of course babe. Let's do it."
+        },
+        "no": {
+          "u_male": "Do you want me to bend over?",
+          "yes": "Do you want me to bend over?",
+          "no": "You know it girl, come over here."
+        }
+      }
+    },
+    "responses": [
+      {
+        "text": "[Get closer to <npc_name>]",
+        "topic": "TALK_DONE",
+        "effect": [
+          { "u_assign_activity": "ACT_WAIT", "duration": 1500 },
+          { "u_message": "You get closer to <npc_name> start to give it to them good.", "type": "good" },
+          { "u_cast_spell": { "id": "spell_deep_chat_noise" } },
+          { "u_add_effect": "effect_deep_chat_cooldown", "duration": "24 hours" },
+          {
+            "u_add_morale": "morale_deep_chat",
+            "bonus": 30,
+            "max_bonus": 50,
+            "duration": "6 hours",
+            "decay_start": "2 hours"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_DEEP_CHAT_FAIL",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "npc_male": "Sorry, Im really not intrested in that right now.",
+      "yes": "Sorry, Im really not intrested in that right now.",
+      "no": "lets not right now, we should focus."
+    },
+    "responses": [
+      {
+        "text": "Yeah, you're right. Let's stay focused.",
+        "topic": "TALK_FRIEND",
+        "effect": [
+          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "1 hour" },
+          { "u_message": "<npc_name> doesnt seem in the mood right now, your offer falls flat.", "type": "warning" }
+        ]
+      }
+    ]
+  }
+]
