@@ -1,0 +1,26 @@
+[
+  {
+    "id": "ACT_DEEP_CONVERSATION",
+    "type": "activity_type",
+    "activity_level": "NO_EXERCISE",
+    "verb": "having sex",
+    "based_on": "time",
+    "can_resume": false,
+    "rooted": true,
+    "completion_eoc": "EOC_DEEP_CONVERSATION_REWARD"
+  },
+  {
+    "id": "EOC_DEEP_CONVERSATION_REWARD",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_add_morale": "morale_deep_chat",
+        "bonus": 20,
+        "max_bonus": 50,
+        "duration": "10 hours",
+        "decay_start": "4 hours"
+      },
+      { "u_message": "You finish fooling around with your companion and now feel much closer to them.", "type": "good" }
+    ]
+  }
+]
