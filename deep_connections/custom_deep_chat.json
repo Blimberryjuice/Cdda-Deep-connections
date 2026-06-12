@@ -7,7 +7,7 @@
         "text": "would you like to fool around for a bit?",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "not": { "npc_has_trait": "THRESH_CEPHALOPOD" } },
@@ -26,7 +26,7 @@
         "text": "So... care to put those tentacles to use?",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_CEPHALOPOD" }
@@ -40,7 +40,7 @@
         "text": "Here kitty, kitty.",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_FELINE" }
@@ -54,7 +54,7 @@
         "text": "I would like to do more then just hug a tree.",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_PLANT" }
@@ -68,7 +68,7 @@
         "text": "Hey, lets fuck like Rabbits",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_RABBIT" }
@@ -82,7 +82,7 @@
         "text": "Let's cuddle for a bit momma bear.",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_URSINE" },
@@ -97,7 +97,7 @@
         "text": "Let's cuddle for a bit Papa Bear.",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_URSINE" },
@@ -112,7 +112,7 @@
         "text": "You would look even more perfect sucking my cock.",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_ALPHA" },
@@ -127,7 +127,7 @@
         "text": "You would look even more perfect between my legs.",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "npc_has_trait": "THRESH_ALPHA" },
@@ -143,7 +143,7 @@
         "topic": "TALK_DEEP_CHAT_SUCCESS",
         "condition": {
           "and": [
-            { "u_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } }
           ]
         }
@@ -210,7 +210,7 @@
         "text": "[get comfortable together]",
         "topic": "TALK_DONE",
         "effect": [
-          { "u_add_effect": "effect_passed_deep_chat_permanently", "duration": "PERMANENT" },
+          { "npc_add_effect": "effect_passed_deep_chat_permanently", "duration": "PERMANENT" },
           { "u_assign_activity": "ACT_DEEP_CONVERSATION", "duration": 1500 },
           { "u_message": "You get closer to <npc_name> start to give it to them good.", "type": "good" },
           { "u_cast_spell": { "id": "spell_deep_chat_noise" } },
