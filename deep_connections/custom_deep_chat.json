@@ -13,7 +13,7 @@
             { "not": { "npc_has_trait": "THRESH_CEPHALOPOD" } },
             { "not": { "npc_has_trait": "THRESH_FELINE" } },
             { "not": { "npc_has_trait": "THRESH_PLANT" } },
-            { "not": { "npc_has_trait": "THRESH_RABBIT" } },
+            { "not": { "npc_has_trait": "TAIL_RABBIT" } },
             { "not": { "npc_has_trait": "THRESH_URSINE" } },
             { "not": { "npc_has_trait": "THRESH_ALPHA" } }
           ]
@@ -71,7 +71,7 @@
             { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
-            { "npc_has_trait": "THRESH_RABBIT" }
+            { "npc_has_trait": "TAIL_RABBIT" }
           ]
         },
         "trial": { "type": "PERSUADE", "difficulty": 45 },
@@ -203,7 +203,7 @@
           "npc_has_trait": "THRESH_PLANT",
           "yes": "Oh, come here then, just dont hurt yourself.",
           "no": {
-            "npc_has_trait": "THRESH_RABBIT",
+            "npc_has_trait": "TAIL_RABBIT",
             "yes": "Iv been waiting for this ALL DAY, lets go, lets go!",
             "no": {
               "npc_has_trait": "THRESH_URSINE",
