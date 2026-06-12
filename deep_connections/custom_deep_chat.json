@@ -149,15 +149,30 @@
         }
       },
       {
-        "text": "I've really grown fond of our time together, Lets really go at it today",
+        "text": "I really want to lay my eggs inside you if you know what I mean.",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_trait": "THRESH_INSECT" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 15 },
+        "trial": { "type": "PERSUADE", "difficulty": 35 },
+        "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
+      },
+      {
+        "text": "I've really grown fond of our time together out here. Can we talk about... us?",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "not": { "npc_has_trait": "THRESH_INSECT" } },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 35 },
         "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       }
@@ -255,10 +270,14 @@
     "id": "TALK_ROMANCE_CHAT_SUCCESS",
     "type": "talk_topic",
     "dynamic_line": {
-      "npc_has_trait": "MASOCHIST",
-      "yes": "Yes! fuck me up, I am all yours babe.",
-      "no": "Ok.. it feels like you have a lot of pent up energy recently."
-    },
+"npc_has_trait": "THRESH_INSECT",
+      "yes": "No, I do that to you!",
+      "no": {
+       "npc_has_trait": "MASOCHIST",
+       "yes": "Yes! fuck me up, I am all yours babe.",
+       "no": "Ok.. it feels like you have a lot of pent up energy recently."
+      }
+     },
     "responses": [
       {
         "text": "[Hold them down and make them squeal]",
