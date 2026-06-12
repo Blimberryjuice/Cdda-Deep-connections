@@ -17,7 +17,21 @@
     "type": "effect_type",
     "id": "effect_passed_deep_chat_permanently",
     "name": [ "Comfortable Bond" ],
-    "desc": [ "You have successfully seduced companion. They are willing to have romantic interactions with you." ],
+    "desc": [ "You have successfully seduced this companion. They are permanently willing to get romantic with you." ],
     "rating": "good"
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_romance_chat_cooldown",
+    "name": [ "Recent Romantic Talk" ],
+    "desc": [ "You recently shared an intimate moment with a companion." ],
+    "max_duration": "24 hours"
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_romance_chat_fail_cooldown",
+    "name": [ "Awkward Tension" ],
+    "desc": [ "Things are a bit awkward after a romantic misstep." ],
+    "max_duration": "12 hours"
   }
 ]
