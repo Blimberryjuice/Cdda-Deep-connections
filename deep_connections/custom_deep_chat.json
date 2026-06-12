@@ -5,27 +5,29 @@
     "responses": [
       {
         "text": "Let's get down to buisness and fuck.",
-        "topic": "TALK_DEEP_CHAT_SUCCESS",
         "condition": {
           "and": [
-            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
-            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
-            { "math": [ "rng(1, 100) <= 50" ] }
-          ]
-        },
-        "switch": true
-      },
-      {
-        "text": "Let's get down to buisness and fuck.",
-        "topic": "TALK_DEEP_CHAT_FAIL",
-        "condition": {
-          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } }
           ]
         },
-        "switch": true,
-        "default": true
+        "trial": {
+          "type": "PERSUADE",
+          "difficulty": 25
+        },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "Let's get down to buisness and fuck.",
+        "topic": "TALK_DEEP_CHAT_SUCCESS",
+        "condition": {
+          "and": [
+            { "u_has_effect": "effect_passed_deep_chat_permanently" },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } }
+          ]
+        }
       }
     ]
   },
@@ -62,6 +64,7 @@
         "text": "[get comfortable together]",
         "topic": "TALK_DONE",
         "effect": [
+          { "u_add_effect": "effect_passed_deep_chat_permanently", "duration": "PERMANENT" },
           { "u_assign_activity": "ACT_DEEP_CONVERSATION", "duration": 1500 },
           { "u_message": "You get closer to <npc_name> start to give it to them good.", "type": "good" },
           { "u_cast_spell": { "id": "spell_deep_chat_noise" } },
