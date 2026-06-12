@@ -12,5 +12,12 @@
     "name": [ "Deep Chat Fail Timeout" ],
     "desc": [ "Your companion is not crazy into you at the moment." ],
     "flags": [ "HIDDEN" ]
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_passed_deep_chat_permanently",
+    "name": [ "Comfortable Bond" ],
+    "desc": [ "You have successfully seduced companion. They are willing to have romantic interactions with you." ],
+    "rating": "good"
   }
 ]
