@@ -4,7 +4,7 @@
     "type": "talk_topic",
     "responses": [
       {
-        "text": "Let's get down to buisness and fuck.",
+        "text": "would you like to fool around for a bit?",
         "condition": {
           "and": [
             { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
