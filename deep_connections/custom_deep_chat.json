@@ -139,11 +139,23 @@
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
       {
-        "text": "Let's get down to buisness and fuck some more.",
+        "text": "I really want to lay my eggs inside you, if you know what I mean.",
+        "topic": "TALK_ROMANCE_CHAT_SUCCESS",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_trait": "THRESH_INSECT" },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } }
+          ]
+        }
+      },
+      {
+        "text": "Let's get down to buisness and fuck.",
         "topic": "TALK_DEEP_CHAT_SUCCESS",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "not": { "npc_has_trait": "THRESH_INSECT" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } }
           ]
         }
@@ -163,7 +175,7 @@
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       },
       {
-        "text": "I've really grown fond of our time together out here. Can we talk about... us?",
+        "text": "I've really grown fond of our time together, lets really go at it today.",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
