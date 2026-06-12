@@ -60,7 +60,7 @@
             { "npc_has_trait": "THRESH_PLANT" }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "trial": { "type": "PERSUADE", "difficulty": 20 },
         "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
@@ -74,7 +74,7 @@
             { "npc_has_trait": "THRESH_RABBIT" }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "trial": { "type": "PERSUADE", "difficulty": 45 },
         "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
@@ -139,7 +139,7 @@
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
       {
-        "text": "Let's get down to buisness and fuck.",
+        "text": "Let's get down to buisness and fuck some more.",
         "topic": "TALK_DEEP_CHAT_SUCCESS",
         "condition": {
           "and": [
@@ -147,6 +147,19 @@
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } }
           ]
         }
+      },
+      {
+        "text": "I've really grown fond of our time together, Lets really go at it today",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 15 },
+        "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       }
     ]
   },
@@ -234,6 +247,41 @@
         "effect": [
           { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "1 hour" },
           { "u_message": "<npc_name> doesnt seem in the mood right now, your offer falls flat.", "type": "warning" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_ROMANCE_CHAT_SUCCESS",
+    "type": "talk_topic",
+    "dynamic_line": {
+      "npc_has_trait": "MASOCHIST",
+      "yes": "Yes! fuck me up, I am all yours babe.",
+      "no": "Ok.. it feels like you have a lot of pent up energy recently."
+    },
+    "responses": [
+      {
+        "text": "[Hold them down and make them squeal]",
+        "topic": "TALK_DONE",
+        "effect": [
+          { "u_assign_activity": "ACT_ROMANTIC_CONVERSATION", "duration": 2000 },
+          { "u_message": "You really go to town on <npc_name>.", "type": "good" },
+          { "u_add_effect": "effect_romance_chat_cooldown", "duration": "23 hours" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "TALK_ROMANCE_CHAT_FAIL",
+    "type": "talk_topic",
+    "dynamic_line": "Oh.. Wow, thanks for the offer but now really is not the time.",
+    "responses": [
+      {
+        "text": "I understand. Let's get back to it then.",
+        "topic": "TALK_FRIEND",
+        "effect": [
+          { "u_add_effect": "effect_romance_chat_fail_cooldown", "duration": "6 hours" },
+          { "u_message": "The air feels a little tense, but you handle the rejection gracefully.", "type": "warning" }
         ]
       }
     ]
