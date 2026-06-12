@@ -9,13 +9,132 @@
           "and": [
             { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
-            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } }
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "not": { "npc_has_trait": "THRESH_CEPHALOPOD" } },
+            { "not": { "npc_has_trait": "THRESH_FELINE" } },
+            { "not": { "npc_has_trait": "THRESH_PLANT" } },
+            { "not": { "npc_has_trait": "THRESH_RABBIT" } },
+            { "not": { "npc_has_trait": "THRESH_URSINE" } },
+            { "not": { "npc_has_trait": "THRESH_ALPHA" } }
           ]
         },
-        "trial": {
-          "type": "PERSUADE",
-          "difficulty": 25
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "So... care to put those tentacles to use?",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_CEPHALOPOD" }
+          ]
         },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "Here kitty, kitty.",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_FELINE" }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "I would like to do more then just hug a tree.",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_PLANT" }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "Hey, lets fuck like Rabbits",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_RABBIT" }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "Let's cuddle for a bit momma bear.",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_URSINE" },
+            "npc_female"
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 20 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "Let's cuddle for a bit Papa Bear.",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_URSINE" },
+            "npc_male"
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 20 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "You would look even more perfect sucking my cock.",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_ALPHA" },
+            "u_male"
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 15 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "You would look even more perfect between my legs.",
+        "condition": {
+          "and": [
+            { "not": { "u_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_ALPHA" },
+            "u_female"
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 15 },
         "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
@@ -35,27 +154,54 @@
     "id": "TALK_DEEP_CHAT_SUCCESS",
     "type": "talk_topic",
     "dynamic_line": {
-      "npc_has_trait": "MASOCHIST",
-      "yes": {
-        "u_male": "Yes Daddy! be rough with me.",
-        "yes": "Yes Daddy! be rough with me.",
-        "no": "Yes Mistress, please be rough with me."
-      },
+      "npc_has_trait": "THRESH_CEPHALOPOD",
+      "yes": "I am pretty sure one of these is a penis.",
       "no": {
-        "npc_male": {
-          "u_male": "Hell ya man, Let's fuck.",
-          "yes": "Hell ya man, Let's fuck.",
-          "no": "of course babe. Let's do it."
-        },
-        "yes": {
-          "u_male": "Hell ya man, Let's fuck.",
-          "yes": "Hell ya man, Let's fuck.",
-          "no": "of course babe. Let's do it."
-        },
+        "npc_has_trait": "THRESH_FELINE",
+        "yes": "Meow!",
         "no": {
-          "u_male": "Do you want me to bend over?",
-          "yes": "Do you want me to bend over?",
-          "no": "You know it girl, come over here."
+          "npc_has_trait": "THRESH_PLANT",
+          "yes": "Oh, come here then, just dont hurt yourself.",
+          "no": {
+            "npc_has_trait": "THRESH_RABBIT",
+            "yes": "Iv been waiting for this ALL DAY, lets go, lets go!",
+            "no": {
+              "npc_has_trait": "THRESH_URSINE",
+              "yes": {
+                "npc_female": "Oh, come here then sweetheart.",
+                "no": "Oh ho, come here then darling"
+              },
+              "no": {
+                "npc_has_trait": "THRESH_ALPHA",
+                "yes": "Fine, just remeber who is in charge here",
+                "no": {
+                  "npc_has_trait": "MASOCHIST",
+                  "yes": {
+                    "u_male": "Yes Daddy! be rough with me.",
+                    "yes": "Yes Daddy! be rough with me.",
+                    "no": "Yes Mistress, please be rough with me."
+                  },
+                  "no": {
+                    "npc_male": {
+                      "u_male": "Hell ya man, Let's fuck.",
+                      "yes": "Hell ya man, Let's fuck.",
+                      "no": "of course babe. Let's do it."
+                    },
+                    "yes": {
+                      "u_male": "Hell ya man, Let's fuck.",
+                      "yes": "Hell ya man, Let's fuck.",
+                      "no": "of course babe. Let's do it."
+                    },
+                    "no": {
+                      "u_male": "Do you want me to bend over?",
+                      "yes": "Do you want me to bend over?",
+                      "no": "You know it girl, come over here."
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
