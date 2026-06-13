@@ -2,36 +2,34 @@
   {
     "id": "effect_deep_chat_cooldown",
     "type": "effect_type",
-    "name": [ "Deep Chat Cooldown" ],
-    "desc": [ "You recently got down and dirty." ],
-    "flags": [ "HIDDEN" ]
+    "name": [ "" ],
+    "desc": [ "" ]
   },
   {
     "id": "effect_deep_chat_fail_cooldown",
     "type": "effect_type",
-    "name": [ "Deep Chat Fail Timeout" ],
-    "desc": [ "Your companion is not crazy into you at the moment." ],
-    "flags": [ "HIDDEN" ]
+    "name": [ "" ],
+    "desc": [ "" ]
   },
   {
     "type": "effect_type",
     "id": "effect_passed_deep_chat_permanently",
-    "name": [ "Comfortable Bond" ],
-    "desc": [ "You have successfully seduced this companion. They are permanently willing to get romantic with you." ],
+    "name": [ "" ],
+    "desc": [ "" ],
     "rating": "good"
   },
   {
     "type": "effect_type",
     "id": "effect_romance_chat_cooldown",
-    "name": [ "Recent Romantic Talk" ],
-    "desc": [ "You recently shared an intimate moment with a companion." ],
-    "max_duration": "24 hours"
+    "name": [ "" ],
+    "desc": [ "" ],
+    "max_duration": "23 hours"
   },
   {
     "type": "effect_type",
     "id": "effect_romance_chat_fail_cooldown",
-    "name": [ "Awkward Tension" ],
-    "desc": [ "Things are a bit awkward after a romantic misstep." ],
-    "max_duration": "12 hours"
+    "name": [ "" ],
+    "desc": [ "" ],
+    "max_duration": "18 hours"
   }
 ]
