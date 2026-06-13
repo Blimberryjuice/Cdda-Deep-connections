@@ -195,6 +195,7 @@
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_trait": "THRESH_INSECT" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
@@ -355,3 +356,4 @@
     ]
   }
 ]
+
