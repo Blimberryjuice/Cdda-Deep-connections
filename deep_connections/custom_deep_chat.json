@@ -197,6 +197,7 @@
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
             { "npc_has_trait": "THRESH_INSECT" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
         },
@@ -205,12 +206,13 @@
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       },
       {
-        "text": "I am really enjoying spending time with you, lets really go at it today.",
+        "text": "I've really grown fond of our time together, lets really go at it today.",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
             { "not": { "npc_has_trait": "THRESH_INSECT" } },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
         },
@@ -291,6 +293,7 @@
           { "npc_add_effect": "effect_passed_deep_chat_permanently", "duration": "PERMANENT" },
           { "u_assign_activity": "ACT_DEEP_CONVERSATION", "duration": 1500 },
           { "u_message": "You get closer to <npc_name> start to give it to them good.", "type": "good" },
+          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "2 hours" },
           { "u_cast_spell": { "id": "spell_deep_chat_noise" } },
           { "u_add_effect": "effect_deep_chat_cooldown", "duration": "20 hours" }
         ]
@@ -310,7 +313,7 @@
         "text": "Yeah, you're right. Let's stay focused.",
         "topic": "TALK_FRIEND",
         "effect": [
-          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "1 hour" },
+          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "2 hours" },
           { "u_message": "<npc_name> doesnt seem in the mood right now, your offer falls flat.", "type": "warning" }
         ]
       }
@@ -334,6 +337,7 @@
         "topic": "TALK_DONE",
         "effect": [
           { "u_assign_activity": "ACT_ROMANTIC_CONVERSATION", "duration": 2000 },
+          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "2 hours" },
           { "u_message": "You really go to town on <npc_name>.", "type": "good" },
           { "u_add_effect": "effect_romance_chat_cooldown", "duration": "23 hours" }
         ]
@@ -350,6 +354,7 @@
         "topic": "TALK_FRIEND",
         "effect": [
           { "u_add_effect": "effect_romance_chat_fail_cooldown", "duration": "6 hours" },
+          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "2 hours" },
           { "u_message": "The air feels a little tense, but you handle the rejection gracefully.", "type": "warning" }
         ]
       }
