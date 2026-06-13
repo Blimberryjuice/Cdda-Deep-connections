@@ -205,7 +205,7 @@
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       },
       {
-        "text": "I've really grown fond of our time together, lets really go at it today.",
+        "text": "I am really enjoying spending time with you, lets really go at it today.",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
