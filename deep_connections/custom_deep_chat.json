@@ -15,7 +15,9 @@
             { "not": { "npc_has_trait": "THRESH_PLANT" } },
             { "not": { "npc_has_trait": "TAIL_RABBIT" } },
             { "not": { "npc_has_trait": "THRESH_URSINE" } },
-            { "not": { "npc_has_trait": "THRESH_ALPHA" } }
+            { "not": { "npc_has_trait": "THRESH_ALPHA" } },
+            { "not": { "npc_has_trait": "THRESH_LIZARD" } },
+            { "not": { "npc_has_trait": "TAIL_RAPTOR" } }
           ]
         },
         "trial": { "type": "PERSUADE", "difficulty": 25 },
@@ -139,6 +141,34 @@
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
       {
+        "text": "Hey I know a great way to keep you warm.",
+        "condition": {
+          "and": [
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "THRESH_LIZARD" }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
+        "text": "You have such a lovely tail, may I play with it?",
+        "condition": {
+          "and": [
+            { "not": { "npc_has_effect": "effect_passed_deep_chat_permanently" } },
+            { "not": { "u_has_effect": "effect_deep_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "npc_has_trait": "TAIL_RAPTOR" }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 30 },
+        "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
+      },
+      {
         "text": "I really want to lay my eggs inside you, if you know what I mean.",
         "topic": "TALK_ROMANCE_CHAT_SUCCESS",
         "condition": {
@@ -165,7 +195,6 @@
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
-            { "npc_has_trait": "THRESH_INSECT" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
@@ -215,27 +244,35 @@
                 "npc_has_trait": "THRESH_ALPHA",
                 "yes": "Fine, just remeber who is in charge here",
                 "no": {
-                  "npc_has_trait": "MASOCHIST",
-                  "yes": {
-                    "u_male": "Yes Daddy! be rough with me.",
-                    "yes": "Yes Daddy! be rough with me.",
-                    "no": "Yes Mistress, please be rough with me."
-                  },
+                  "npc_has_trait": "THRESH_LIZARD",
+                  "yes": "Ssss... yes, come get real close to me.",
                   "no": {
-                    "npc_male": {
-                      "u_male": "Hell ya man, Let's fuck.",
-                      "yes": "Hell ya man, Let's fuck.",
-                      "no": "of course babe. Let's do it."
-                    },
-                    "yes": {
-                      "u_male": "Hell ya man, Let's fuck.",
-                      "yes": "Hell ya man, Let's fuck.",
-                      "no": "of course babe. Let's do it."
-                    },
+                    "npc_has_trait": "TAIL_RAPTOR" ,
+                    "yes": "If I let you, will you stop staring at it?",
                     "no": {
-                      "u_male": "Do you want me to bend over?",
-                      "yes": "Do you want me to bend over?",
-                      "no": "You know it girl, come over here."
+                      "npc_has_trait": "MASOCHIST",
+                      "yes": {
+                        "u_male": "Yes Daddy! be rough with me.",
+                        "yes": "Yes Daddy! be rough with me.",
+                        "no": "Yes Mistress, please be rough with me."
+                      },
+                      "no": {
+                        "npc_male": {
+                          "u_male": "Hell ya man, Let's fuck.",
+                          "yes": "Hell ya man, Let's fuck.",
+                          "no": "of course babe. Let's do it."
+                        },
+                        "yes": {
+                          "u_male": "Hell ya man, Let's fuck.",
+                          "yes": "Hell ya man, Let's fuck.",
+                          "no": "of course babe. Let's do it."
+                        },
+                        "no": {
+                          "u_male": "Do you want me to bend over?",
+                          "yes": "Do you want me to bend over?",
+                          "no": "You know it girl, come over here."
+                        }
+                      }
                     }
                   }
                 }
