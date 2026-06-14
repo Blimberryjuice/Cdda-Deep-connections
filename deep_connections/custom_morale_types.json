@@ -2,6 +2,11 @@
   {
     "id": "morale_deep_chat",
     "type": "morale_type",
-    "text": "Had sex"
+    "text": "Had romance"
+  },
+  {
+    "id": "morale_spider_chat",
+    "type": "morale_type",
+    "text": "Had spider romance"
   }
 ]
