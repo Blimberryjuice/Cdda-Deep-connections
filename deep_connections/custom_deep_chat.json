@@ -150,7 +150,7 @@
             { "npc_has_trait": "THRESH_LIZARD" }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 15 },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
         "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
@@ -174,18 +174,21 @@
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_effect": "effect_passed_romance_permanently" },
             { "npc_has_trait": "THRESH_INSECT" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } }
           ]
         }
       },
       {
-        "text": "Let's get down to buisness and fuck again.",
+        "text": "Let's get down to buisness and fuck.",
         "topic": "TALK_DEEP_CHAT_SUCCESS",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
             { "not": { "npc_has_trait": "THRESH_INSECT" } },
+            { "not": { "npc_has_trait": "THRESH_CATTLE" } },
+            { "not": { "npc_has_trait": "THRESH_SPIDER" } },
             { "not": { "u_has_effect": "effect_deep_chat_cooldown" } }
           ]
         }
@@ -211,6 +214,8 @@
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
             { "not": { "npc_has_trait": "THRESH_INSECT" } },
+            { "not": { "npc_has_trait": "THRESH_CATTLE" } },
+            { "not": { "npc_has_trait": "THRESH_SPIDER" } },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
@@ -219,6 +224,60 @@
         "trial": { "type": "PERSUADE", "difficulty": 15 },
         "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
+      },
+      {
+        "text": "Iv been thinking about this a long time, I want to milk you",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_trait": "THRESH_CATTLE" },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 20 },
+        "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
+      },
+      {
+        "text": "Iv come to milk you again",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_effect": "effect_passed_romance_permanently" },
+            { "npc_has_trait": "THRESH_CATTLE" },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } }
+          ]
+        },
+        "topic": "TALK_ROMANCE_CHAT_SUCCESS"
+      },
+      {
+        "text": "Why dont we get a little freaky with those webs of yours?",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_trait": "THRESH_SPIDER" },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
+            { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
+          ]
+        },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
+        "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
+      },
+      {
+        "text": "Lets get freaky with those webs of yours",
+        "condition": {
+          "and": [
+            { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+            { "npc_has_effect": "effect_passed_romance_permanently" },
+            { "npc_has_trait": "THRESH_SPIDER" },
+            { "not": { "u_has_effect": "effect_romance_chat_cooldown" } }
+          ]
+        },
+        "topic": "TALK_ROMANCE_CHAT_SUCCESS"
       }
     ]
   },
@@ -323,20 +382,42 @@
     "id": "TALK_ROMANCE_CHAT_SUCCESS",
     "type": "talk_topic",
     "dynamic_line": {
-"npc_has_trait": "THRESH_INSECT",
+      "npc_has_trait": "THRESH_INSECT",
       "yes": "No, I do that to you!",
       "no": {
-       "npc_has_trait": "MASOCHIST",
-       "yes": "Yes! fuck me up, I am all yours babe.",
-       "no": "Ok.. it feels like you have a lot of pent up energy recently."
+        "npc_has_trait": "THRESH_CATTLE",
+        "yes": "I knew this was coming",
+        "no": {
+          "npc_has_trait": "THRESH_SPIDER",
+          "yes": "Yes lets, hold still now",
+          "no": {
+            "npc_has_trait": "MASOCHIST",
+            "yes": "Yes! fuck me up, I am all yours babe.",
+            "no": "Ok.. it feels like you have a lot of pent up energy recently."
+          }
+        }
       }
-     },
+    },
     "responses": [
       {
+        "text": "[They web you up and play with your body]",
+        "condition": { "npc_has_trait": "THRESH_SPIDER" },
+        "topic": "TALK_DONE",
+        "effect": [
+          { "u_assign_activity": "ACT_ROMANTIC_SPIDER_CONVERSATION", "duration": 2000 },
+          { "npc_add_effect": "effect_passed_romance_permanently", "duration": "PERMANENT" },
+          { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "2 hours" },
+          { "u_message": "You really go to town on <npc_name>.", "type": "good" },
+          { "u_add_effect": "effect_romance_chat_cooldown", "duration": "23 hours" }
+        ]
+      },
+      {
         "text": "[Hold them down and make them squeal]",
+        "condition": { "not": { "npc_has_trait": "THRESH_SPIDER" } },
         "topic": "TALK_DONE",
         "effect": [
           { "u_assign_activity": "ACT_ROMANTIC_CONVERSATION", "duration": 2000 },
+          { "npc_add_effect": "effect_passed_romance_permanently", "duration": "PERMANENT" },
           { "u_add_effect": "effect_deep_chat_fail_cooldown", "duration": "2 hours" },
           { "u_message": "You really go to town on <npc_name>.", "type": "good" },
           { "u_add_effect": "effect_romance_chat_cooldown", "duration": "23 hours" }
@@ -361,4 +442,3 @@
     ]
   }
 ]
-
