@@ -31,5 +31,12 @@
     "name": [ "" ],
     "desc": [ "" ],
     "max_duration": "18 hours"
+  },
+  {
+    "type": "effect_type",
+    "id": "effect_passed_romance_permanently",
+    "name": [ "" ],
+    "desc": [ "" ],
+    "rating": "good"
   }
 ]
