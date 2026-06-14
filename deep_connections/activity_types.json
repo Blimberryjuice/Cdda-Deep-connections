@@ -34,6 +34,31 @@
     ]
   },
   {
+    "id": "ACT_ROMANTIC_SPIDER_CONVERSATION",
+    "type": "activity_type",
+    "activity_level": "ACTIVE_EXERCISE",
+    "verb": "having spider sex",
+    "based_on": "time",
+    "can_resume": false,
+    "rooted": true,
+    "completion_eoc": "EOC_ROMANTIC_SPIDER_REWARD"
+  },
+  {
+    "id": "EOC_ROMANTIC_SPIDER_REWARD",
+    "type": "effect_on_condition",
+    "effect": [
+      {
+        "u_add_morale": "morale_spider_chat",
+        "bonus": 25,
+        "max_bonus": 50,
+        "duration": "12 hours",
+        "decay_start": "5 hours"
+      },
+      { "u_add_effect": "webbed", "duration": "30 s", "intensity": 2 },
+      { "u_message": "Well that was certainly a unique experience", "type": "good" }
+    ]
+  },
+  {
     "id": "EOC_DEEP_CONVERSATION_REWARD",
     "type": "effect_on_condition",
     "effect": [
@@ -48,3 +73,4 @@
     ]
   }
 ]
+
