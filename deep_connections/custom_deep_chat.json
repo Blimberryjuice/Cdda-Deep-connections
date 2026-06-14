@@ -150,7 +150,7 @@
             { "npc_has_trait": "THRESH_LIZARD" }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 25 },
+        "trial": { "type": "PERSUADE", "difficulty": 15 },
         "success": { "topic": "TALK_DEEP_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_DEEP_CHAT_FAIL" }
       },
@@ -180,7 +180,7 @@
         }
       },
       {
-        "text": "Let's get down to buisness and fuck.",
+        "text": "Let's get down to buisness and fuck again.",
         "topic": "TALK_DEEP_CHAT_SUCCESS",
         "condition": {
           "and": [
@@ -201,7 +201,7 @@
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 35 },
+        "trial": { "type": "PERSUADE", "difficulty": 25 },
         "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       },
@@ -216,7 +216,7 @@
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
         },
-        "trial": { "type": "PERSUADE", "difficulty": 35 },
+        "trial": { "type": "PERSUADE", "difficulty": 15 },
         "success": { "topic": "TALK_ROMANCE_CHAT_SUCCESS" },
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       }
