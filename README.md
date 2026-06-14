@@ -3,4 +3,4 @@ You ever wanted to screw around with your loyal compatriots? well now you can. T
 To get this mod working all you have to do is slap the "Deep_connections" mod folder that you download here into your "mods" folder inside your data folder for CDDA then you generate a world and enable this mod in the mod manager.
 Alternativly If you want to add this mod to an active game you need to go to you save folder and find your mods.json in the save for your world and add "deep_connections" to the list before the ]
 
-This mod was created with the help of Gemini AI. You can contack me for questions or suggestions at Blimberrypudding@outlook.com
+This mod was created with the help of Gemini AI. You can contact me for questions or suggestions at Blimberrypudding@outlook.com
