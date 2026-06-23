@@ -201,7 +201,8 @@
             { "npc_has_trait": "THRESH_INSECT" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
-            { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
+            { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } },
+            { "not": { "npc_has_effect": "effect_passed_romance_permanently" } }
           ]
         },
         "trial": { "type": "PERSUADE", "difficulty": 25 },
@@ -216,6 +217,7 @@
             { "not": { "npc_has_trait": "THRESH_INSECT" } },
             { "not": { "npc_has_trait": "THRESH_CATTLE" } },
             { "not": { "npc_has_trait": "THRESH_SPIDER" } },
+            { "not": { "npc_has_effect": "effect_passed_romance_permanently" } },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
@@ -226,6 +228,20 @@
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       },
       {
+  "text": "Last time was great, I really want to fuck you silly again.",
+  "topic": "TALK_ROMANCE_CHAT_SUCCESS",
+  "condition": {
+    "and": [
+      { "npc_has_effect": "effect_passed_deep_chat_permanently" },
+      { "npc_has_effect": "effect_passed_romance_permanently" },
+      { "not": { "npc_has_trait": "THRESH_INSECT" } },
+      { "not": { "npc_has_trait": "THRESH_CATTLE" } },
+      { "not": { "npc_has_trait": "THRESH_SPIDER" } },
+      { "not": { "u_has_effect": "effect_romance_chat_cooldown" } }
+    ]
+  }
+},
+{
         "text": "Iv been thinking about this a long time, I want to milk you",
         "condition": {
           "and": [
@@ -233,6 +249,7 @@
             { "npc_has_trait": "THRESH_CATTLE" },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
+            { "not": { "npc_has_effect": "effect_passed_romance_permanently" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
           ]
         },
@@ -258,6 +275,7 @@
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
             { "npc_has_trait": "THRESH_SPIDER" },
+            { "not": { "npc_has_effect": "effect_passed_romance_permanently" } },
             { "not": { "u_has_effect": "effect_romance_chat_cooldown" } },
             { "not": { "u_has_effect": "effect_deep_chat_fail_cooldown" } },
             { "not": { "u_has_effect": "effect_romance_chat_fail_cooldown" } }
@@ -268,7 +286,7 @@
         "failure": { "topic": "TALK_ROMANCE_CHAT_FAIL" }
       },
       {
-        "text": "Lets get freaky with those webs of yours",
+        "text": "Lets get freaky with those webs of your",
         "condition": {
           "and": [
             { "npc_has_effect": "effect_passed_deep_chat_permanently" },
